@@ -77,15 +77,15 @@ CHALLENGE 5
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
-// const allHappy = (arr) => {
-//   let happy = true;
-//   let happy = true;
-//  for(let i = 0; i < arr.length; i++){
-//    if(!arr[i].includes(':)')){
-//      let happy = false
-//    }
-//   return happy;
-// };
+const allHappy = (arr) => {
+  let happy = true;
+  arr.forEach((element)=>{
+    if(!element.includes(':)')){
+      happy = false;
+    }
+  });
+  return happy;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -110,7 +110,13 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  let happy = true;
+  arr.forEach((element)=>{
+    if(!element.includes(target)){
+      happy = false;
+    }
+  });
+  return happy;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -218,7 +224,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should correctly assess whether all the strings are happy', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -237,7 +243,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should determine whether all the strings contain a given string', () => {
     const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
 
