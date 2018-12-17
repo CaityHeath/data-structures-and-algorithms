@@ -81,11 +81,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  let searchTerm = ' ';
-  for(var i =0; i < recipe.length; i++){
-  let wordPos = recipe[i].lastIndexOf(searchTerm);
-  result.push(recipe.slice(wordPos));
-  }
+  recipe.ingredients.forEach(function(element){
+    let search = ' ';
+    let x = element.indexOf(search, 3);
+    let y = element.slice(x+1, element.length);
+    result.push(y);
+  });
   return result;
 }
 
@@ -99,7 +100,10 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(function(element){
+    let x = element.split(' ');
+    result.push(x.slice(2, x.length).join(' '));
+  });
   return result;
 }
 
@@ -115,7 +119,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.forEach(function(element){
+    let search = ' ';
+    let x = element.indexOf(search);
+    let y = element.slice(0, x);
+    result.push(y);
+  });
   return result;
 }
 
@@ -231,13 +240,13 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
