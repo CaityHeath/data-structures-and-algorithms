@@ -12,6 +12,11 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
+<<<<<<< HEAD
+=======
+ 
+
+>>>>>>> 56fc63f0a88c880e920c7edcf289ad5c0b40f99e
   let result = input.map(subarr => subarr.map(element => element === target).reduce((acc, curr) => {
     if(curr == true){
       acc++;
@@ -23,6 +28,10 @@ let count = 0;
     count = result[i] + count;
   }
   return count;
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 56fc63f0a88c880e920c7edcf289ad5c0b40f99e
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,7 +45,18 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
+<<<<<<< HEAD
   // Solution code here...
+=======
+  let result = input.map(subarr => subarr.reduce((acc, curr) => {
+    acc = acc + curr;
+   return acc;
+  })).reduce((acc, cur)=>{
+    acc = acc + cur;
+    return acc;
+  })
+ return result;
+>>>>>>> 56fc63f0a88c880e920c7edcf289ad5c0b40f99e
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,7 +153,20 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
+<<<<<<< HEAD
   // Solution code here...
+=======
+  let short = data.map(x => x.height);
+
+  let temp = short[0];
+  short.forEach((element) =>{
+    if(parseInt(element) < temp){
+      temp = element
+    }
+  });
+
+  return data.filter(x => x.height === temp).map(x => x.name).toString();
+>>>>>>> 56fc63f0a88c880e920c7edcf289ad5c0b40f99e
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,7 +192,11 @@ describe('Testing challenge 1', () => {
   })
 });
 
+<<<<<<< HEAD
 xdescribe('Testing challenge 2', () => {
+=======
+describe('Testing challenge 2', () => {
+>>>>>>> 56fc63f0a88c880e920c7edcf289ad5c0b40f99e
   test('It should add all the numbers in the arrays', () => {
     const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
 
@@ -188,7 +225,11 @@ describe('Testing challenge 4', () => {
   });
 });
 
+<<<<<<< HEAD
 xdescribe('Testing challenge 5', () => {
+=======
+describe('Testing challenge 5', () => {
+>>>>>>> 56fc63f0a88c880e920c7edcf289ad5c0b40f99e
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });
