@@ -1,0 +1,17 @@
+{
+  "name": "arrayshift",
+  "version": "1.0.0",
+  "description": "",
+  "main": "array-shift.js",
+  "scripts": {
+    "start": "npm run start",
+    "test": "jest --verbose --coverage",
+    "lint": "./node_modules/eslint/bin/eslint.js **/*.js"
+  },
+  "author": "caity heath",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^5.10.0",
+    "jest": "^23.6.0"
+  }
+}

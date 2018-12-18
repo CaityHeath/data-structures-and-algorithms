@@ -1,4 +1,5 @@
 # Insert and shift middle index of array
+This is Code Challenge 2 for JavaScript 401
 
 
 ## Challenge
