@@ -1,23 +1,25 @@
 'use strict';
 
-function binarySearch(arr, key){
-  let mid = arr.length/2;
+let search = module.exports = {};
+
+search.binarySearch = function(arr, key){
+  if(!Array.isArray(arr)){return null;}
+
+  let mid = Math.floor(arr.length/2);
   let cnt = 0;
   let limit = mid;
   let start = 0;
-  let end = arr.length
+  let end = arr.length;
 
-  while(cnt <= limit && arr[mid] !== key){
+  while(cnt < limit && arr[mid] !== key){
     
     if(key > arr[mid]){
       start = mid;
-      end = end;
-      mid = ((end - start)/2) + mid;
+      mid = Math.floor(((end - start)/2) + mid);
 
     } else if(key < arr[mid]){
-      start = start;
       end = mid;
-      mid = mid - ((end - start)/2);
+      mid =Math.floor( mid - ((end - start)/2));
     }
 
     cnt++;
@@ -27,7 +29,8 @@ function binarySearch(arr, key){
   if(cnt === limit){
     result = -1;
   } else {
-    result = arr[mid];
+    result = mid;
   }
   return result;
-}
+};
+
