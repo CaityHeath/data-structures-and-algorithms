@@ -1,7 +1,7 @@
 {
   "name": "arrayshift",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is Code Challenge 2 for JavaScript 401",
   "main": "array-shift.js",
   "scripts": {
     "start": "npm run start",
@@ -13,5 +13,6 @@
   "dependencies": {
     "eslint": "^5.10.0",
     "jest": "^23.6.0"
-  }
+  },
+  "devDependencies": {}
 }
