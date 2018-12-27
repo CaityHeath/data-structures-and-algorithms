@@ -26,7 +26,7 @@ describe('testing LinkedList', () => {
     list.append(2);
     list.append(3);
     list.append(4);
-    console.log(list);
+    
 
     expect(list.head.value).toEqual(1);
     expect(list.head.next.value).toEqual(2);
@@ -35,6 +35,74 @@ describe('testing LinkedList', () => {
     expect(list.head.next.next.next.next).toBeNull();
   });
 
+
+  it('insertBefore(value, newValue) should throw a Type Error if newValue is not a number', () => {
+    let list = new LinkedList();
+    list.insertBefore('mabel', 6);
+
+    expect(() => {
+      list.insertBefore('mabel');
+    }).toThrow();
+  });
+
+
+  it('insertBefore(value, newValue) should prepend a value to the node that is referenced by the argument value', () => { 
+    let list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.append(4);
+    list.insertBefore(3,5);
+   
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(5);
+    expect(list.head.next.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.next.value).toEqual(4);
+    expect(list.head.next.next.next.next.next).toBeNull();
+  });
+
+  it('insertBefore(value, newValue) should create a head node if the linked list is empty', () => {
+    let list = new LinkedList();
+    list.insertBefore(0, 5);
+    console.log(list);
+
+    expect(list.head.value).toEqual(5);
+  });
+
+
+  it('insertAfter(value, newValue) should throw a Type Error if newValue is not a number', () => {
+    let list = new LinkedList();
+    list.insertAfter('mabel', 6);
+
+    expect(() => {
+      list.insertAfter('mabel');
+    }).toThrow();
+  });
+
+  it('insertAfter(value, newValue) should prepend a value to the node that is referenced by the argument value', () => { 
+    let list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.append(4);
+    list.insertAfter(3,5);
+    console.log(list);
+
+    expect(list.head.value).toEqual(1);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(3);
+    expect(list.head.next.next.next.value).toEqual(5);
+    expect(list.head.next.next.next.next.value).toEqual(4);
+    expect(list.head.next.next.next.next.next).toBeNull();
+  });
+
+  it('insertAfter(value, newValue) should create a head node if the linked list is empty', () => {
+    let list = new LinkedList();
+    list.insertAfter(0, 5);
+    expect(list.head.value).toEqual(5);
+  });
 
   it('insert(value) should add a node to the front of an empty Linked List', () => {
     let list = new LinkedList();
