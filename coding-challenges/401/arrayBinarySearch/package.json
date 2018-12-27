@@ -1,0 +1,17 @@
+{
+  "name": "arraybinarysearch",
+  "version": "1.0.0",
+  "description": "## Challenge My BinarySearch function takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to JavaScript, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.",
+  "main": "array-binary-search.js",
+  "scripts": {
+    "start": "npm run start",
+    "test": "jest --verbose --coverage",
+    "lint": "./node_modules/eslint/bin/eslint.js **/*.js"
+  },
+  "author": "Caity Heath",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^5.10.0",
+    "jest": "^23.6.0"
+  }
+}
