@@ -74,4 +74,47 @@ describe('testing LinkedList', () => {
     
     expect(list.includes(3)).toBeUndefined();
   });
+
+  it('kFromEnd(k) should return the value of the node that is k from the end.', () => {
+    let list = new LinkedList();
+    list.append(5);
+    list.append(3);
+    list.append(7);
+    list.append(9);
+    list.append(2);
+    list.append(8);
+    list.kFromEnd(2);
+
+    expect(list.kFromEnd(2)).toEqual(9);
+     
+  });
+
+  it('kFromEnd(k) should return k is too big if k is greater than the length of the list', () => {
+    let list = new LinkedList();
+    list.append(5);
+    list.append(3);
+    list.append(7);
+    list.append(9);
+    list.append(2);
+    list.append(8);
+    list.kFromEnd(9);
+
+    expect(list.kFromEnd(9)).toEqual('k is too big!');
+  });
+
+  it('kFromEnd(k) should return k must be a number if the value of k is not numerical', () => {
+    let list = new LinkedList();
+    list.append(5);
+    list.append(3);
+    list.append(7);
+    list.append(9);
+    list.append(2);
+    list.append(8);
+    
+
+    expect(() => {
+      list.kFromEnd('cat');
+    }).toThrow();
+  });
 });
+
