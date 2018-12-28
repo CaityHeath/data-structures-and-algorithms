@@ -61,7 +61,10 @@ class LinkedList{
     node.next = current.next;
     current.next = node;
   }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 934431ea820bf02d8f71b7d947012a1e61cc3649
 
   insert(value){
     let node = new Node(value);
@@ -79,6 +82,31 @@ class LinkedList{
       }
       current = current.next;
     }
+  }
+
+  kFromEnd(k){
+    if(typeof k !== 'number'){
+      throw new TypeError('k must be a number');
+    }
+
+    let cnt = 1;
+    let current = this.head;
+
+    while(current.next){
+      current = current.next;
+      cnt++;
+    }
+    let kpos = cnt - k;
+    if(kpos < 0){
+      return 'k is too big!';
+    }
+    cnt = 1;
+    current = this.head;
+    while(cnt < kpos){
+      current = current.next;
+      cnt++;
+    }
+    return current.value;
   }
 }
 
