@@ -1,31 +1,31 @@
-let Stack = require('../stacksAndQueues/stacks_and_queues.js');
+let Stack = require('../stacksAndQueues/stacks_and_queues');
 
 class PseudoQueue {
   constructor(){
-    let s1 = new Stack();
-    let s2 = new Stack();
+    this.s1 = new Stack();
+    this.s2 = new Stack();
   }
 
   enqueue(value){
-    if(s1.length === 0 && s2.length === 0){
-      s1.push(value);
+    if(this.s1.length === 0 && this.s2.length === 0){
+      this.s1.push(value);
+      return;
     }
-    else if(s1.length > 0){
-      s2.push(value);
-    }
+    this.s2.push(value);
   }
 
   dequeue(){
-    if(s1.length >= 1 ){
-      s1.pop();
+    if(this.s1.length >= 1 ){
+      this.s1.pop();
+      return;
     }
-    else if(s1.length === 0 && s2.length > 0){
-      while(s2.length !== 0){
-        s1.push(s2.top);
-        s2.pop();
+    else if(this.s1.length === 0 && this.s2.length > 0){
+      while(this.s2.length !== 0){
+        this.s1.push(this.s2.top);
+        this.s2.pop();
       }
     }
-    s1.pop();
+    this.s1.pop();
   }
 }
 
