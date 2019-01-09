@@ -34,7 +34,7 @@ describe('Animal Queue', () => {
       test.enque('cat');
       test.enque('dog');
       test.deque('cat');
-      expect(test.cat.front).toEqual(null);
+      expect(test.cat.front).toEqual(undefined);
     });
 
     it('removes a dog from the dog queue when the input is a dog', () => {
