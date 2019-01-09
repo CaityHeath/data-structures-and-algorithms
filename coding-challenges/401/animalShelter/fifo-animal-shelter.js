@@ -1,6 +1,6 @@
 'use strict';
 
-const sq = require('../stacks-and-queues');
+const sq = require('../stacksAndQueues/stacks_and_queues');
 
 class AnimalShelter{
   constructor(){
