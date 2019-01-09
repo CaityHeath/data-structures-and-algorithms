@@ -33,12 +33,49 @@ class Stack {
   }
 }
 
-class Queue{
-  constructor(){
-    this.front = null;
+
+class Queue {
+  constructor() {
     this.rear = null;
-    this.length = 0;
+    this.front = null;
+    this.next = null;
+  }
+
+  enqueue(value) {
+    let node = new Node(value);
+    if (!this.front) {
+      this.front = node;
+      this.rear = node;
+    }
+    else {
+      this.rear.next = node;
+      this.rear = node;
+    }
+  }
+
+  
+  dequeue() {
+    if (!this.front) {
+      return false;
+    }
+    else {
+      let dequeuedItem = this.front;
+      this.front = dequeuedItem.next;
+      dequeuedItem.next = null;
+      return dequeuedItem;
+    }
+  }
+
+  
+
+  peek() {
+    if (this.front) {
+      return this.front;
+    }
+    else {
+      return null;
+    }
   }
 }
 
-module.exports = Stack;
+module.exports = {Stack, Queue};
