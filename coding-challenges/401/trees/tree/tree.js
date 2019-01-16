@@ -1,7 +1,7 @@
 'use strict';
 
 const Node = require('../node.js');
-
+const Queue = require('../../stacks_and_queues/stacksAndQueues/stacks_and_queues.js');
 
 class BinaryTree{
   constructor(){
@@ -40,8 +40,28 @@ class BinaryTree{
     _walk(this.root);
     return nodes;
   }
+
+  breadthFirst(tree){
+    let data = new Queue.Queue();
+    let treeQ = new Queue.Queue();
+
+    data.enqueue(tree.root);
+
+    while(data.length){
+      let temp = data.dequeue();
+      if(temp.left){ data.enqueue(temp.left); }
+      if(temp.right){ data.enqueue(temp.right); }
+
+      treeQ.enqueue(temp);
+    }
+
+    while(treeQ.length){
+      console.log(treeQ.dequeue());
+    }
+    return;
+  }
 }
 
 
 
-module.exports = {BinaryTree};
+module.exports = BinaryTree;
