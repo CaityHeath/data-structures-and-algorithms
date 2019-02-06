@@ -1,5 +1,7 @@
 'use strict';
 
+let node = require('../node.js');
+
 function check(node){
   if(node.value % 15 == 0){
     node.value = 'fizzbuzz';
