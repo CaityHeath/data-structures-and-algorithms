@@ -19,12 +19,13 @@ Aviod utilizing any of the library methods available to your language.
 O(n) due to the for loop which we use to iterate of hash1. 
 
 * Our algorithm begins by declaring an empty array which will be returning later.
-* Iterate over parameter 1
-* If there is a value in an index, traverse the linked list. 
-* declare an array which will serve as a bucket, each key will have its own bucket. 
-* if hash2 contains the contains a shared key, the value of that key will be pushed into the bucket. If it doesn't contain a shared key then null will be pushed into the bucket. 
-* Push the bucket into the container before the while loop breaks. 
+* Iterate over the first argument: hash1
+* At the indices that have a value, traverse the bucket which in our case is a linked list. 
+* declare an array which will serve as a bucket to the items in the hashtable bucket, each key will have its own bucket array. 
+* if hash2 contains the contains a shared key, the value of that key will be pushed into the bucket array. If it doesn't contain a shared key then null will be pushed into the bucket array. 
+* Push the bucket array into the container before the while loop breaks. 
 *  When the for loop breaks, return the container.
+
 ---
 
 ## Solution
