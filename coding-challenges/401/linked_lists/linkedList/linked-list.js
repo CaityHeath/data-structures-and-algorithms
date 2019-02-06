@@ -8,9 +8,7 @@ class LinkedList{
   }
 
   append(value){
-    if(typeof value !== 'number'){
-      throw new TypeError('value must be a number');
-    }
+
     if(!this.head){
       this.head = new Node(value);
       return;
@@ -61,10 +59,6 @@ class LinkedList{
     node.next = current.next;
     current.next = node;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> 934431ea820bf02d8f71b7d947012a1e61cc3649
 
   insert(value){
     let node = new Node(value);

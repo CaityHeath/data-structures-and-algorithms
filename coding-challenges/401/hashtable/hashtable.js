@@ -4,6 +4,7 @@ const LinkedList = require('../linked_lists/linkedList/linked-list');
 class HashTable{
   constructor(size=53){
     this.keyMap = new Array(size);
+    this.size = 53;
   }
 
   getHash(key){
@@ -56,10 +57,6 @@ class HashTable{
     }
     return false;
   }
-
-
-
-
-
 }
 
+module.exports = HashTable;
