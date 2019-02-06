@@ -45,15 +45,10 @@ describe("left-join", () => {
 
     h1.add("nice", "kind");
     h1.add("wrath", "anger");
-
-
     h2.add('nice', 'mean');
-
 
    let arr = leftJoin(h1, h2);
    let result = [ [ { wrath: 'anger' }, null ], [ { nice: 'kind' }, null ] ]
     expect(arr).toBe(result);
-
-
   });
 })
