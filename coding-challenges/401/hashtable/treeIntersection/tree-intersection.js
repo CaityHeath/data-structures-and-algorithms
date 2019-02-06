@@ -14,7 +14,7 @@ function treeIntersection(t1, t2){
   }
 
   let _walk2 = (node) => {
-    if(hashmap.contains(node.value)){
+    if(hashmap.contains(node.value) && !result.includes(node.value)){
       console.log(true);
       result.push(node.value)
     }
