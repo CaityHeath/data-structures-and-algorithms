@@ -16,7 +16,7 @@ Aviod utilizing any of the library methods available to your language.
 ---
 
 ## Approach & Efficiency
-O(n) due to the for loop which we use to iterate of hash1. 
+O(n) due to the for loop which we use to iterate over hash1. The Hashmaps methods being used are time and space constant so that accessing the keys directly won't adversely affect the algorithm's efficiency. 
 
 * Our algorithm begins by declaring an empty array which will be returning later.
 * Iterate over the first argument: hash1
