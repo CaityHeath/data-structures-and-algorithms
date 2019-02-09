@@ -8,7 +8,10 @@ class HashTable{
   }
 
   getHash(key){
-  let total = 0;
+    if(typeof key !== 'string'){
+      throw new TypeError('key must be a string');
+    }
+  let total= 0;
   let prime = 31;
   for(let i = 0; i < Math.min(key.length, 100); i++){
     let char = key[i];
@@ -32,7 +35,7 @@ class HashTable{
     let object = null;
     while(current){
       if(Object.keys(current.value)[0] === key){
-        return (object = current);
+        return (object = current.value);
       }
       current = current.next;
     }
