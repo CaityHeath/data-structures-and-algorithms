@@ -42,4 +42,7 @@ g.addEdge("A", "C", 12);
 //console.log(g.getNeighbors("C"));
 //console.log(g.getNodes());
 //console.log(g.size());
-console.log(g);
+//console.log(g);
+
+
+module.exports = Graph;
