@@ -4,7 +4,7 @@ A graph data-structure consists of a finite set of vertices and connections betw
 
 
 ## Approach & Efficiency
-My adjacency list graph is comprised of an object containing keys and value pairs. The values at each key is an array which serves as a list of the node's neighbors. 
+My adjacency list graph is comprised of an object containing keys and value pairs. The value at each key is an array which serves as a list of the node's neighbors. 
 
 
 ### Big O of an Adjacency List
