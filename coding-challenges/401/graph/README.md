@@ -29,4 +29,33 @@ My adjacency list graph is comprised of an object containing keys and value pair
   * Accepts a vertex as a parameter and returns each neighbor and the edge weight. 
 * `size()`
   * Returns the size of the graph.
+* `breadthFirst(start)`
+  * Returns a set of nodes in the order the graph was traversed. 
 
+---
+
+### Solution for Breadth First Traversal
+
+![](./assets/bft-pd.JPG)
+![](./assets/bft-code.JPG)
+
+#### Algorithm 
+* Accepts a starting point
+* Defines a queue to que and enque nodes as you traverse the graph.
+* Define a results array
+* Define an Object which will hold the node values as you visit them.
+* Define the current node. 
+* Define neighbors which will hold the array of neighbors. 
+* Write a while loop while the store has length. 
+  * current is set to the value dequed from the queue. 
+  * push current into the result array
+  * get the neighbors of current and set the list of them to the variable neighbors. 
+    * Iterate through neighbors. 
+    * if the neighbor doesn't exists in the visited object
+      * That node is added to the visited object and assigned a value of true.
+      * Push the neighbor into the store. 
+
+* Return result
+
+#### Efficiency of algorithm
+O(neighbors)
