@@ -59,3 +59,31 @@ My adjacency list graph is comprised of an object containing keys and value pair
 
 #### Efficiency of algorithm
 O(neighbors)
+
+---
+
+## Code Challenges
+
+#### Get Edge
+
+Determine whether a full trip is possible with direct flights and how much it would cost. 
+
+##### Algorithm
+* Write a function that accepts a graph and an array of cities
+* Define a cost variable -> `let cost = 0`
+* Define a boolean variable -> `let bool = 0`
+* Iterate over the array of cities starting at 0 and ending at city.length - 1, as you don't have to loook at the last city.
+  * Find the neigbors 
+  * Iterate over the neighbors and see if any of them are the same as the next index in the city array. 
+    * if its true -> `bool = true, cost = cost + edge weight. `
+    * if its false -> return `[false, 0]`
+
+* return `[bool, cost]`
+
+
+##### Efficiency
+O(n^2);
+
+##### Solution
+![](../assets/getEdge.jpg)
+
