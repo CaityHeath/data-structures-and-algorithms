@@ -15,6 +15,8 @@ My adjacency list graph is comprised of an object containing keys and value pair
 * Adding an edge -> O(1)
 * Query -> O(1)
 * Storage -> O( |vertices| + |edges| )
+* Breadth First Search -> O( |vertices| + |edges| )
+* Depth First Search -> O( |vertices| + |edges| )
 
 
 ## API
@@ -41,7 +43,7 @@ My adjacency list graph is comprised of an object containing keys and value pair
 
 #### Algorithm 
 * Accepts a starting point
-* Defines a queue to que and enque nodes as you traverse the graph.
+* Define a queue to que and enque nodes as you traverse the graph.
 * Define a results array
 * Define an Object which will hold the node values as you visit them.
 * Define the current node. 
@@ -57,8 +59,39 @@ My adjacency list graph is comprised of an object containing keys and value pair
 
 * Return result
 
-#### Efficiency of algorithm
-O(neighbors)
+#### Efficiency 
+O(|Edges| + |Vertices|)
+
+---
+### Solution for Breadth First Traversal
+
+![](./assets/visualbft.jpg)
+![](./assets/pseudobft.JPG)
+![](./assets/bftcode.jpg)
+
+
+
+#### Algorithm 
+* Accepts a graph and a starting point
+* Declare an empty object -> store the visted nodes
+* Declare an empty array -> store the nodes in pre-order visitation
+* Create a recursive function which takes a node as a parameter. 
+
+* Write a base case
+    * if there isn't a node return null
+
+* Add the node to the visited object and set its value to true.
+* Push the node into the results array.
+* Iterate over the neighbors of the node
+    * at each neighbor check if it is stored in the visited object.
+    * If it isn't return _walk(neighbor) -> this will run the recursive function on each of the neighbors that haven't been visited. 
+
+* Invoke the walk function with the start node
+* Return result
+
+#### Efficiency 
+O( |Edges| + |Vertices| )
+
 
 ---
 
@@ -85,5 +118,7 @@ Determine whether a full trip is possible with direct flights and how much it wo
 O(n^2);
 
 ##### Solution
-![](../assets/getEdge.jpg)
+![](./assets/getEdge.jpg)
+
+
 

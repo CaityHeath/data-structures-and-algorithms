@@ -74,5 +74,6 @@ g.addEdge("A", "E", 0)
 g.addEdge("B", 'C', 0);
 g.addEdge('B', 'D', 0);
 g.addEdge('E', 'F', 0);
-g.addEdge('E', 'D', 0);
-console.log(g.breadthFirst('A'));
+
+//console.log(g.breadthFirst('A'));
+console.log(g);

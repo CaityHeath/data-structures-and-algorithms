@@ -35,5 +35,4 @@ city.addEdge('sf', 'nyc', 200);
 city.addEdge('atx', 'nyc', 160);
 city.addEdge('la', 'atx', 78);
 
-console.log(getEdge(['atx', 'nyc'], city));
-console.log(getEdge(['la', 'atx'], city));
+//console.log(getEdge(['sf', 'nyc', 'atx'], city));
