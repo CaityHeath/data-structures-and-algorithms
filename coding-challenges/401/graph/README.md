@@ -63,7 +63,7 @@ My adjacency list graph is comprised of an object containing keys and value pair
 O(|Edges| + |Vertices|)
 
 ---
-### Solution for Breadth First Traversal
+### Solution for Depth First Traversal
 
 ![](./assets/visualbft.jpg)
 ![](./assets/pseudobft.JPG)
