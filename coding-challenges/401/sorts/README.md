@@ -62,6 +62,12 @@ Quick-Sort Solution and Efficiency
 ## Radix Sort
 
 ### Algorithm 
+* Write a function that accepts a list of numbers
+* Figure out how many digits are in the largest # by calling a helper function. 
+* loop over 0 -> k, k represents the digit index.
+* Place each number in the right bucket based on the digit index. 
+* Replace the array with the values in the bucket
+* Return the list
 
 ### Efficiency
 ##### Time: O(nk)
