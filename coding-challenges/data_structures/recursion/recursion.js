@@ -44,13 +44,11 @@ function recursiveRange(num){
 /*
 Write a recursive function called fib which accpets a number and returns the nth number in the fibonacci sequence. 
 */
-let arr = [];
+
 function fib(n){
-console.log(arr);
-  if(n < 3) {return 1}
+if(n < 3) {return 1}
 let sum = fib(n - 1) + fib(n - 2);
-arr.push(sum);
 return sum;
 }
 
-console.log(fib(4));
+console.log(fib(9));
