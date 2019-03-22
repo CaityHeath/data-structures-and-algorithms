@@ -28,5 +28,5 @@ This repository is home to all of my data-structure classes and challenges as we
 ## Run the Code!
 
 1. Clone this repository. 
-2. Ensure that you have installed jest.
+2. Ensure that you have installed jest, reference these docs: https://jestjs.io/docs/en/getting-started
 3. run the following command ` jest {fileName}`
