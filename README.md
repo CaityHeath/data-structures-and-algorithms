@@ -1,4 +1,5 @@
 # data-structures-and-algorithms
+## Author: Caity Heath
 This repository is home to all of my data-structure classes and challenges as well as, my solutions to string and array manipulation challenges. All code is written in JavaScript. 
 
 ### Data-Structure Classes:
