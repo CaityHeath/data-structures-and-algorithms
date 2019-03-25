@@ -39,15 +39,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   let filteredCities = [];
-  for(let i = 0; i < arr.length; i++){
+  arr.forEach( idx => {
     let n = /[A-J]/;
-    let city = arr[i][0].match(n);
-      if(city){
-        filteredCities.push(arr[i]);
-      } 
-  }
-  return filteredCities;
-};
+    let city = idx[0].match(n);
+    if(city){ filteredCities.push(idx) }
+  });
+  return filteredCities
+}
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -62,7 +61,9 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let reg = /[october]/ig;
+  if(input.match(reg)){ return true }
+  else{ return false }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,7 +159,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should match any of the acceptable inputs', () => {
     expect(matchMonth('Oct')).toBeTruthy();
     expect(matchMonth('oct')).toBeTruthy();

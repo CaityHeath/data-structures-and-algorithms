@@ -179,7 +179,6 @@ describe('testing LinkedList', () => {
     list.append(2);
     list.append(8);
     
-
     expect(() => {
       list.kFromEnd('cat');
     }).toThrow();
