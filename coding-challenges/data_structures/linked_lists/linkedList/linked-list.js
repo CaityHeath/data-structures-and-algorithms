@@ -102,6 +102,31 @@ class LinkedList{
     }
     return current.value;
   }
+
+  deleteFromMiddle(){
+    let cnt = 0;
+    let current = this.head;
+
+    while(current.next){
+      current = current.next;
+      cnt++;
+    }
+
+    let mid = Math.floor(cnt/2);
+    let pos = this.head;
+    let previous;
+
+    while(mid){
+      previous = pos;
+      pos = pos.next;
+
+      mid--;
+    }
+    pos.next = null;
+    previous.next = previous.next.next;
+    return this;
+  }
+  
 }
 
 module.exports = LinkedList;
