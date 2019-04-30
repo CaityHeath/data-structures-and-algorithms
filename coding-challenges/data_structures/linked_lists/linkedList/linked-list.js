@@ -126,7 +126,22 @@ class LinkedList{
     previous.next = previous.next.next;
     return this;
   }
+
+  reverse(){
+    let next = null;
+    let prev = null;
+    let current = this.head;
+    console.log('inside reverse');
+    while(current){
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    return this.head = prev;
+  }
   
+
 }
 
 module.exports = LinkedList;
