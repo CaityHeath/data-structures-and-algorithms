@@ -2,6 +2,7 @@
 
 const LinkedList = require('../linked-list.js');
 
+
 describe('testing LinkedList', () => {
   it('append(value) should append a value to an empty linked list', () => {
     let list = new LinkedList();
@@ -11,7 +12,7 @@ describe('testing LinkedList', () => {
     
   });
   
-  it('append(value) should throw a Type Error if value is not a number', () => {
+  xit('append(value) should throw a Type Error if value is not a number', () => {
     let list = new LinkedList();
 
     expect(() => {
@@ -20,7 +21,7 @@ describe('testing LinkedList', () => {
   });
 
 
-  it('append(value) should append a value to a Linked List that is not empty', () => {
+  xit('append(value) should append a value to a Linked List that is not empty', () => {
     let list = new LinkedList();
     list.append(1);
     list.append(2);
@@ -36,7 +37,7 @@ describe('testing LinkedList', () => {
   });
 
 
-  it('insertBefore(value, newValue) should throw a Type Error if newValue is not a number', () => {
+  xit('insertBefore(value, newValue) should throw a Type Error if newValue is not a number', () => {
     let list = new LinkedList();
     list.insertBefore('mabel', 6);
 
@@ -46,7 +47,7 @@ describe('testing LinkedList', () => {
   });
 
 
-  it('insertBefore(value, newValue) should prepend a value to the node that is referenced by the argument value', () => { 
+  xit('insertBefore(value, newValue) should prepend a value to the node that is referenced by the argument value', () => { 
     let list = new LinkedList();
     list.append(1);
     list.append(2);
@@ -63,7 +64,7 @@ describe('testing LinkedList', () => {
     expect(list.head.next.next.next.next.next).toBeNull();
   });
 
-  it('insertBefore(value, newValue) should create a head node if the linked list is empty', () => {
+  xit('insertBefore(value, newValue) should create a head node if the linked list is empty', () => {
     let list = new LinkedList();
     list.insertBefore(0, 5);
     console.log(list);
@@ -72,7 +73,7 @@ describe('testing LinkedList', () => {
   });
 
 
-  it('insertAfter(value, newValue) should throw a Type Error if newValue is not a number', () => {
+  xit('insertAfter(value, newValue) should throw a Type Error if newValue is not a number', () => {
     let list = new LinkedList();
     list.insertAfter('mabel', 6);
 
@@ -81,7 +82,7 @@ describe('testing LinkedList', () => {
     }).toThrow();
   });
 
-  it('insertAfter(value, newValue) should prepend a value to the node that is referenced by the argument value', () => { 
+  xit('insertAfter(value, newValue) should prepend a value to the node that is referenced by the argument value', () => { 
     let list = new LinkedList();
     list.append(1);
     list.append(2);
@@ -98,20 +99,20 @@ describe('testing LinkedList', () => {
     expect(list.head.next.next.next.next.next).toBeNull();
   });
 
-  it('insertAfter(value, newValue) should create a head node if the linked list is empty', () => {
+  xit('insertAfter(value, newValue) should create a head node if the linked list is empty', () => {
     let list = new LinkedList();
     list.insertAfter(0, 5);
     expect(list.head.value).toEqual(5);
   });
 
-  it('insert(value) should add a node to the front of an empty Linked List', () => {
+  xit('insert(value) should add a node to the front of an empty Linked List', () => {
     let list = new LinkedList();
     list.insert(1);
 
     expect(list.head.value).toEqual(1);
     expect(list.head.next).toBeNull();
   });
-  it('insert(value) should add a node to the front of a Linked List that is not empty', () => {
+  xit('insert(value) should add a node to the front of a Linked List that is not empty', () => {
     let list = new LinkedList();
     list.insert(4);
     list.insert(3);
@@ -126,7 +127,7 @@ describe('testing LinkedList', () => {
     expect(list.head.next.next.next.next).toBeNull();
   });
 
-  it('includes(value) should return a boolean result depending on whether the input value exists as a Nodes value', () => {
+  xit('includes(value) should return a boolean result depending on whether the input value exists as a Nodes value', () => {
     let list = new LinkedList();
     list.append(1);
     list.append(2);
@@ -135,7 +136,7 @@ describe('testing LinkedList', () => {
     expect(list.includes(2)).toEqual(true);
   });
 
-  it('includes(value) should return false if it is not a value in the LinkedList', () => {
+  xit('includes(value) should return false if it is not a value in the LinkedList', () => {
     let list = new LinkedList();
     list.append(1);
     list.append(2);
@@ -143,7 +144,7 @@ describe('testing LinkedList', () => {
     expect(list.includes(3)).toBeUndefined();
   });
 
-  it('kFromEnd(k) should return the value of the node that is k from the end.', () => {
+  xit('kFromEnd(k) should return the value of the node that is k from the end.', () => {
     let list = new LinkedList();
     list.append(5);
     list.append(3);
@@ -157,7 +158,7 @@ describe('testing LinkedList', () => {
      
   });
 
-  it('kFromEnd(k) should return k is too big if k is greater than the length of the list', () => {
+  xit('kFromEnd(k) should return k is too big if k is greater than the length of the list', () => {
     let list = new LinkedList();
     list.append(5);
     list.append(3);
@@ -170,7 +171,7 @@ describe('testing LinkedList', () => {
     expect(list.kFromEnd(9)).toEqual('k is too big!');
   });
 
-  it('kFromEnd(k) should return k must be a number if the value of k is not numerical', () => {
+  xit('kFromEnd(k) should return k must be a number if the value of k is not numerical', () => {
     let list = new LinkedList();
     list.append(5);
     list.append(3);
@@ -182,6 +183,20 @@ describe('testing LinkedList', () => {
     expect(() => {
       list.kFromEnd('cat');
     }).toThrow();
+  });
+
+  it('reverse should return the linked list reversed', () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    console.log(list);
+    console.log(list.reverse());
+
+    expect(list.head.value).toEqual(3);
+    expect(list.head.next.value).toEqual(2);
+    expect(list.head.next.next.value).toEqual(1);
+
   });
 });
 
