@@ -4,7 +4,7 @@ const LinkedList = require('../linked-list.js');
 
 
 describe('testing LinkedList', () => {
-  it('append(value) should append a value to an empty linked list', () => {
+  xit('append(value) should append a value to an empty linked list', () => {
     let list = new LinkedList();
     list.append(1);
 
@@ -191,12 +191,9 @@ describe('testing LinkedList', () => {
     list.append(2);
     list.append(3);
     console.log(list);
-    console.log(list.reverse());
 
-    expect(list.head.value).toEqual(3);
-    expect(list.head.next.value).toEqual(2);
-    expect(list.head.next.next.value).toEqual(1);
 
+    expect(list.reverse().value).toEqual(3);
   });
 });
 

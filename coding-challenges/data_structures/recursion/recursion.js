@@ -8,7 +8,7 @@ function power(base, exp){
   return base * power(base, exp - 1);
 }
 
-console.log(power(5, 2));
+// console.log(power(5, 2));
 
 
 /*
@@ -34,11 +34,13 @@ function productOfArray(arr){
 /* 
 Write a function that accepts a number and adds up all of the numbers from 0 - the number passed into the function
 */
-
 function recursiveRange(num){
   if(num === 1){return 1}
   return num + recursiveRange(num-1);
 }
+
+
+
 
 
 /*
@@ -51,4 +53,33 @@ let sum = fib(n - 1) + fib(n - 2);
 return sum;
 }
 
-console.log(fib(9));
+function timer(n){
+  let start = Date.now();
+  let sum = fib(n);
+  let total = Date.now() - start;
+  return `caity ${sum}, time ${total}`
+}
+
+
+function recurseFib(n){
+  let start = Date.now();
+
+  if(n <= 0){return null}
+  if(n === 1){return 0}
+  function recurse(iteration, last, lastlast){
+    let output = last + lastlast;
+    if(iteration === n ){
+      let total = Date.now() - start;
+      return `lee ${total}, sum ${output}`;
+      
+    } else {
+      return recurse(iteration + 1, output, last)
+    }
+  }
+
+  return recurse(2, 1, 0);
+}
+
+
+console.log(recurseFib(50));
+console.log(fib(50));

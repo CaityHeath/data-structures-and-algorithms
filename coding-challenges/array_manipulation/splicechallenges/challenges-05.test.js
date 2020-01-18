@@ -84,6 +84,7 @@ const listFoods = (recipe) => {
   recipe.ingredients.forEach(function(element){
     let search = ' ';
     let x = element.indexOf(search, 3);
+    console.log(x);
     let y = element.slice(x+1, element.length);
     result.push(y);
   });

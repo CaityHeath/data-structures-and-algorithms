@@ -90,8 +90,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   let arr = str.split('');
-  let reversed = arr.reduce((acc, idx) =>{
-    return idx + acc;
+  let reversed = arr.reduce((acc, val) =>{
+    return val + acc;
   },'');
   return reversed;
 };

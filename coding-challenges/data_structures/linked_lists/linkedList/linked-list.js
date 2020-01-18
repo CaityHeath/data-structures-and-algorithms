@@ -5,6 +5,7 @@ const Node = require('./lib/node.js');
 class LinkedList{
   constructor(){
     this.head = null;
+    this.tail = null;
   }
 
   append(value){
@@ -126,7 +127,29 @@ class LinkedList{
     previous.next = previous.next.next;
     return this;
   }
+
+  reverse(){
+    let current = this.head;
+    let previous = null;
+    let next = null;
+
+    while(current!== null){
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    return previous;
+  }
   
 }
+
+
+let list = new LinkedList();
+
+list.append(1);
+list.append(2);
+list.append(3);
+console.log(list.reverse());
 
 module.exports = LinkedList;
